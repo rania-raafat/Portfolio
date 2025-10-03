@@ -608,6 +608,7 @@ header .container .navbar .container-fluid .navbar-brand {
 }
 .swiper {
   padding: 35px 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .slider {
@@ -627,32 +628,6 @@ header .container .navbar .container-fluid .navbar-brand {
   justify-content: center;
   align-items: center;
   bottom: 0;
-}
-
-.pulse {
-  animation: bounce 0.3s ease;
-}
-
-@keyframes bounce {
-  0% {
-    transform: scale(0);
-  }
-
-  25% {
-    transform: scale(0.25);
-  }
-
-  50% {
-    transform: scale(0.5);
-  }
-
-  75% {
-    transform: scale(0.75);
-  }
-
-  100% {
-    transform: scale(1);
-  }
 }
 
 .swiper-button-next:after,
