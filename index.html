@@ -9,13 +9,14 @@
   <title>Rania's Portfolio</title>
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <!-- Render All Elements Normally -->
   <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <!-- Font Awesome Library -->
   <link rel="stylesheet" href="./assets/css/all.min.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.css" />
   <!-- Main Template CSS File -->
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="./assets/css/responsive.css" />
@@ -152,7 +153,7 @@
       <div class="row">
         <div class="col-lg-4 ele">
           <div class="content">
-            <i class="fas fa-building-columns"></i>
+            <i class="fas fa-school"></i>
             <h3>Engineering Student – Communication & Computer Department, Shubra Faculty of Engineering</h3>
             <p>Currently expanding my knowledge and skills in a dynamic academic environment.</p>
           </div>
@@ -291,38 +292,48 @@
   <section id="projects">
     <h1>My Projects</h1>
     <p>Each one tells a story of problem-solving and implementation.</p>
+    <!-- start swiper -->
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 ele">
-          <div class="content">
-            <img src="./assets/images/proj1.png" class="zoom-img" alt="project image">
-            <h3>Responsive Restaurant Website</h3>
-            <p>A dynamic site adapting to all screen sizes for an optimal dining experience.</p>
-          </div>
-        </div>
-        <div class="col-lg-6 ele ele-e">
-          <div class="content">
-            <img src="./assets/images/proj2.png" class="zoom-img" alt="project image">
-            <h3>Business Website Project</h3>
-            <p>A modern and responsive business website built using HTML,and CSS.</p>
-            <a href="https://ecommerce-website-pi-smoky.vercel.app/" target="_blank">Live Demo</a>
-          </div>
-        </div>
-        <div class="col-lg-6 ele ele-e">
-          <div class="content">
-            <img src="./assets/images/proj3.png" class="zoom-img" alt="project image">
-            <h3>Car Studio Website</h3>
-            <p>A modern and responsive website for a car studio,
-              showcasing vehicles with sleek design, smooth navigation,
-              and an engaging user experience.</p>
-          </div>
-        </div>
-        <div class="col-lg-6 ele ele-e">
-          <div class="content">
-            <img src="./assets/images/proj4.jpeg" class="zoom-img" alt="project image">
-            <h3>News API Web App</h3>
-            <p>Developed a responsive web application that integrates
-              with the NewsAPI to deliver real-time news updates from multiple sources.</p>
+        <div class="col">
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./assets/images/proj1.png" class="zoom-img" alt="project image">
+                <h3>Responsive Restaurant Website</h3>
+                <p>A dynamic site adapting to all screen sizes for an optimal dining experience.</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/proj2.png" class="zoom-img" alt="project image">
+                <h3>Business Website Project</h3>
+                <p>A modern and responsive business website built using HTML,and CSS.</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/proj3.png" class="zoom-img" alt="project image">
+                <h3>Car Studio Website</h3>
+                <p>A modern and responsive website for a car studio,
+                  showcasing vehicles with sleek design, smooth navigation,
+                  and an engaging user experience.</p>
+              </div>
+              <div class="swiper-slide">
+                <img src="./assets/images/proj4.jpeg" class="zoom-img" alt="project image">
+                <h3>News API Web App</h3>
+                <p>Developed a responsive web application that integrates
+                  with the NewsAPI to deliver real-time news updates from multiple sources.</p>
+              </div>
+            </div>
+            <div class="slider">
+              <div class="swiper-pagination"></div>
+              <div class="button">
+                <p>SLIDER NAVIGATION</p>
+                <div class="swiper-button-prev">
+                  <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="swiper-button-next">
+                  <i class="fas fa-arrow-right"></i>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <a href="https://github.com/rania-raafat" target="_blank">Visit My github</a>
@@ -330,6 +341,7 @@
           <img id="modalImg" alt="zoomed photo">
         </div>
       </div>
+    </div>
     </div>
 
   </section>
@@ -340,7 +352,7 @@
     <h1>Get in touch</h1>
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 ele">
+        <div class="col ele">
           <div class="content">
             <form id="contactForm">
               <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required />
@@ -354,21 +366,24 @@
             </form>
           </div>
         </div>
-        <div class="col-lg-6 ele">
-          <h2>Find Me Online</h2>
-          <a href="https://github.com/rania-raafat" target="_blank"><i class="fab fa-github"></i> Github</a>
-          <a href="https://www.linkedin.com/in/rania-raafat/" target="_blank"><i class="fab fa-linkedin"></i>
-            Linkedin</a>
-          <a href="mailto:raniaraafat421@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Gmail</a>
-        </div>
       </div>
-    </div>
   </section>
   <!-- end contact -->
+  <!-- start footer -->
+  <footer>
+    <div class="overlay"></div>
+    <a href="https://github.com/rania-raafat" target="_blank"><i class="fab fa-github"></i> Github</a>
+    <a href="https://www.linkedin.com/in/rania-raafat/" target="_blank"><i class="fab fa-linkedin"></i>
+      Linkedin</a>
+    <a href="mailto:raniaraafat421@gmail.com" target="_blank"><i class="fas fa-envelope"></i> Gmail</a>
+  </footer>
+  <!-- end footer -->
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="assets/js/popper.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
   <script src="./assets/js/basic.js" defer></script>
 </body>
 

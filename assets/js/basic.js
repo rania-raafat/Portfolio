@@ -47,12 +47,71 @@ window.addEventListener("scroll", () => {
   }
 });
 
+const swiper = new Swiper(".swiper", {
+  slidesPerView: 1, // default = 3 slides
+  spaceBetween: 30,
+  loop: true, // Makes it infinite loop
+  centeredSlides: true,
+  speed: 1200,
+  threshold: 15,
+  keyboard: {
+    enabled: true,
+    onlyInViewport: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true, // Makes dots clickable
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 }, // mobile
+    992: { slidesPerView: 3 }, // laptop and above
+  },
+  on: {
+    init: function () {
+      const self = this;
 
+      function setEqualHeight() {
+        self.slides.forEach((slide) => (slide.style.height = "auto"));
+
+        if (window.innerWidth < 768) return;
+
+        let maxHeight = 0;
+        self.slides.forEach((slide) => {
+          maxHeight = Math.max(maxHeight, slide.offsetHeight);
+        });
+
+        self.slides.forEach((slide) => {
+          slide.style.height = maxHeight + "px";
+        });
+      }
+
+      setEqualHeight();
+
+      window.addEventListener("load", setEqualHeight);
+      window.addEventListener("resize", setEqualHeight);
+    },
+    slideChange: function () {
+      document.querySelectorAll(".swiper-pagination-bullet").forEach((b) => {
+        b.classList.remove("pulse");
+      });
+
+      const active = document.querySelector(".swiper-pagination-bullet-active");
+      if (active) {
+        void active.offsetWidth;
+        active.classList.add("pulse");
+      }
+    },
+  },
+});
 const modal = document.getElementById("photoModal");
 const modalImg = document.getElementById("modalImg");
 const images = document.querySelectorAll(".zoom-img");
 
-images.forEach(img => {
+images.forEach((img) => {
   img.addEventListener("click", () => {
     modal.style.display = "flex";
     modalImg.src = img.src;
@@ -63,11 +122,13 @@ modal.addEventListener("click", () => {
   modal.style.display = "none";
 });
 
-  (function () {
-    emailjs.init("SYJPP7fqvh_qjZYDo"); 
-  })();
+(function () {
+  emailjs.init("SYJPP7fqvh_qjZYDo");
+})();
 
-  document.getElementById("contactForm").addEventListener("submit", async function (e) {
+document
+  .getElementById("contactForm")
+  .addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const status = document.getElementById("formStatus");
@@ -98,4 +159,3 @@ modal.addEventListener("click", () => {
       status.innerText = "❌ Failed to send. Please try again later.";
     }
   });
-

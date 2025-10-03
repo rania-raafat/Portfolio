@@ -3,3 +3,21 @@
         margin-left: 0;
     }
 }
+
+@media(max-width:767px) {
+    #contact .ele #contactForm {
+        width: 100%;
+    }
+}
+@media(max-width:400px){
+    footer{
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+@media (max-width:300px){
+    .slider {
+    gap: 20px;
+    flex-direction: column;
+    }
+}
