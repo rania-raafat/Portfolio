@@ -48,9 +48,9 @@ window.addEventListener("scroll", () => {
 });
 
 const swiper = new Swiper(".swiper", {
-  slidesPerView: 1, // default = 3 slides
+  slidesPerView: 1,
   spaceBetween: 30,
-  loop: true, // Makes it infinite loop
+  loop: true,
   centeredSlides: true,
   speed: 1200,
   threshold: 15,
@@ -60,7 +60,7 @@ const swiper = new Swiper(".swiper", {
   },
   pagination: {
     el: ".swiper-pagination",
-    clickable: true, // Makes dots clickable
+    clickable: true,
   },
   navigation: {
     nextEl: ".swiper-button-next",
@@ -75,25 +75,37 @@ const swiper = new Swiper(".swiper", {
       const self = this;
 
       function setEqualHeight() {
-        self.slides.forEach((slide) => (slide.style.height = "auto"));
+        // Reset heights first
+        self.slides.forEach((slide) => {
+          slide.style.height = "auto";
+          slide.style.minHeight = "auto";
+        });
 
+        // Mobile: do NOT force height
         if (window.innerWidth < 768) return;
 
+        // Calculate tallest slide
         let maxHeight = 0;
         self.slides.forEach((slide) => {
           maxHeight = Math.max(maxHeight, slide.offsetHeight);
         });
 
+        // Apply min-height instead of height (SAFE for sliders)
         self.slides.forEach((slide) => {
-          slide.style.height = maxHeight + "px";
+          slide.style.minHeight = maxHeight + "px";
         });
       }
 
+      // Initial run
       setEqualHeight();
 
+      // Recalculate after page fully loads (images included)
       window.addEventListener("load", setEqualHeight);
+
+      // Recalculate on resize
       window.addEventListener("resize", setEqualHeight);
     },
+
     slideChange: function () {
       document.querySelectorAll(".swiper-pagination-bullet").forEach((b) => {
         b.classList.remove("pulse");

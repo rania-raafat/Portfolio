@@ -51,6 +51,8 @@ p {
   color: var(--yellow);
   padding: 10px 20px;
   display: block;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .sidebar .nav-link:hover {
@@ -84,7 +86,6 @@ header {
 }
 
 header .container .navbar .container-fluid .navbar-collapse .navbar-nav {
-  margin-left: 150px;
   padding: 20px 0;
   gap: 10px;
 }
@@ -93,6 +94,7 @@ header .container .navbar .container-fluid .navbar-collapse .navbar-nav li a {
   font-family: var(--main-font);
   color: white;
   font-weight: 600;
+  font-size: 18px;
   transition: all 0.5s ease-in-out;
   position: relative;
 }
@@ -136,7 +138,7 @@ header .container .navbar .container-fluid .navbar-brand {
 .hero-section {
   position: relative;
   min-height: calc(100vh - 80px);
-  margin-top: -96px;
+  margin-top: -100px;
   background-image: url(../images/backgrund.webp);
   background-position: center;
   background-size: cover;
@@ -256,8 +258,10 @@ header .container .navbar .container-fluid .navbar-brand {
 }
 
 .hero-section .col-lg-6:last-child img {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: 92%;
+  border-radius: 50%;
+  box-shadow: 0 0px 18px -5px gray;
 }
 
 .hero-section .scroller {
@@ -374,7 +378,7 @@ header .container .navbar .container-fluid .navbar-brand {
   transform: translateY(-5px);
 }
 
-#services {
+#certificates {
   background-color: var(--black-one);
   color: var(--yellow);
   text-align: center;
@@ -385,7 +389,7 @@ header .container .navbar .container-fluid .navbar-brand {
   align-items: center;
 }
 
-#services h1 {
+#certificates h1 {
   font-weight: 800;
   font-size: 3.5rem;
   padding: 0 0 50px 0;
@@ -395,7 +399,7 @@ header .container .navbar .container-fluid .navbar-brand {
   justify-content: center;
 }
 
-#services h1::after {
+#certificates h1::after {
   position: absolute;
   content: '';
   background-color: var(--yellow);
@@ -405,15 +409,16 @@ header .container .navbar .container-fluid .navbar-brand {
   border-radius: 3px;
 }
 
-#services .container .col-lg-4 {
+#certificates .container .col-lg-4 {
   padding: 30px 15px;
   position: relative;
   cursor: default;
   transition: all 0.8s ease;
 }
 
-#services .container .ele .content {
+#certificates .container .ele .content {
   padding: 50px 20px;
+  padding-bottom: 20px;
   background-color: var(--black-one);
   height: 100%;
   display: flex;
@@ -423,7 +428,7 @@ header .container .navbar .container-fluid .navbar-brand {
   transition: all 0.7s ease-in-out;
 }
 
-#services .container .ele .content span {
+#certificates .container .ele .content span {
   position: absolute;
   top: 0;
   font-size: 1.8rem;
@@ -439,15 +444,24 @@ header .container .navbar .container-fluid .navbar-brand {
   border: var(--yellow) solid 3px;
 }
 
-#services .container .ele.ele-e .content {
+#certificates .container .ele .content a{
+  color: white; 
+  font-weight: 600;
+  transition: all 0.6s ease;
+}
+#certificates .container .ele .content a:hover{
+  color: var(--yellow); 
+  text-decoration: none;
+}
+#certificates .container .ele.ele-e .content {
   background-color: var(--main-color);
 }
 
-#services .container .ele .content:hover {
+#certificates .container .ele .content:hover {
   background-color: #0e0d0d;
 }
 
-#services .container .ele:hover {
+#certificates .container .ele:hover {
   transform: translateY(-5px);
 }
 
