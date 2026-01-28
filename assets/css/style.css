@@ -185,14 +185,14 @@ header .container .navbar .container-fluid .navbar-brand {
 .hero-section .col-lg-6:first-child>div p {
   color: var(--yellow);
   font-family: var(--main-font);
-  font-size: 2.69rem;
+  font-size: 2.3rem;
   font-weight: 800;
 }
 
 .hero-section .col-lg-6:first-child h1 {
   color: var(--yellow);
   font-family: var(--main-font);
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 800;
   margin: 20px 0;
 }
@@ -315,7 +315,6 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #about h1 {
   font-weight: 800;
-  font-size: 3.5rem;
   padding: 0 0 50px 0;
   position: relative;
   display: flex;
@@ -391,7 +390,6 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #certificates h1 {
   font-weight: 800;
-  font-size: 3.5rem;
   padding: 0 0 50px 0;
   position: relative;
   display: flex;
@@ -478,7 +476,6 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #skills h1 {
   font-weight: 800;
-  font-size: 3.5rem;
   padding: 0 0 50px 0;
   position: relative;
   display: flex;
@@ -522,7 +519,6 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #projects h1 {
   font-weight: 800;
-  font-size: 3.5rem;
   padding: 0 0 50px 0;
   position: relative;
   display: flex;
@@ -732,7 +728,6 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #contact h1 {
   font-weight: 800;
-  font-size: 3.5rem;
   padding: 0 0 50px 0;
   position: relative;
   display: flex;
