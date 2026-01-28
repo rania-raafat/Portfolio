@@ -260,8 +260,6 @@ header .container .navbar .container-fluid .navbar-brand {
 .hero-section .col-lg-6:last-child img {
   height: auto;
   width: 92%;
-  border-radius: 50%;
-  box-shadow: 0 0px 18px -5px gray;
 }
 
 .hero-section .scroller {
