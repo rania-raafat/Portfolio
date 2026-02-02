@@ -7,10 +7,12 @@
   --main-color: #121212;
   --black-one: #1E1E1E;
 }
-::selection{
+
+::selection {
   background-color: var(--yellow);
   color: #000;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -19,6 +21,8 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) black;
 }
 
 p {
@@ -145,6 +149,7 @@ header .container .navbar .container-fluid .navbar-brand {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
+  overflow: hidden;
 }
 
 .hero-section .overlay {
@@ -187,6 +192,15 @@ header .container .navbar .container-fluid .navbar-brand {
   font-family: var(--main-font);
   font-size: 2.3rem;
   font-weight: 800;
+  text-shadow:
+    1px 1px 0 rgba(255, 215, 120, 0.7),
+    /* highlight */
+    2px 2px 0 rgba(210, 170, 90, 0.9),
+    /* mid depth */
+    3px 3px 0 rgba(160, 120, 60, 0.9),
+    /* deep layer */
+    4px 4px 6px rgba(0, 0, 0, 0.55);
+  /* soft shadow */
 }
 
 .hero-section .col-lg-6:first-child h1 {
@@ -257,6 +271,27 @@ header .container .navbar .container-fluid .navbar-brand {
   color: white;
 }
 
+.hero-section .col-lg-6:last-child {
+  position: relative;
+  margin-top: 20px;
+}
+
+.hero-section .col-lg-6:last-child img:first-child {
+  position: absolute;
+  z-index: -1;
+  animation: cycle 10s linear infinite;
+}
+
+@keyframes cycle {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .hero-section .col-lg-6:last-child img {
   height: auto;
   width: 92%;
@@ -324,10 +359,36 @@ header .container .navbar .container-fluid .navbar-brand {
   position: absolute;
   content: '';
   background-color: var(--yellow);
-  width: 40px;
+  width: 80px;
   height: 4px;
   top: -10px;
   border-radius: 3px;
+}
+
+#about h1::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: moveDot 4s ease-in-out infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateX(-40px);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-40px);
+  }
 }
 
 #about .container .col-lg-4 {
@@ -399,10 +460,36 @@ header .container .navbar .container-fluid .navbar-brand {
   position: absolute;
   content: '';
   background-color: var(--yellow);
-  width: 40px;
+  width: 80px;
   height: 4px;
   top: -10px;
   border-radius: 3px;
+}
+
+#certificates h1::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: moveDot 4s ease-in-out infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateX(-40px);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-40px);
+  }
 }
 
 #certificates .container .col-lg-4 {
@@ -440,15 +527,17 @@ header .container .navbar .container-fluid .navbar-brand {
   border: var(--yellow) solid 3px;
 }
 
-#certificates .container .ele .content a{
-  color: white; 
+#certificates .container .ele .content a {
+  color: white;
   font-weight: 600;
   transition: all 0.6s ease;
 }
-#certificates .container .ele .content a:hover{
-  color: var(--yellow); 
+
+#certificates .container .ele .content a:hover {
+  color: var(--yellow);
   text-decoration: none;
 }
+
 #certificates .container .ele.ele-e .content {
   background-color: var(--main-color);
 }
@@ -485,10 +574,36 @@ header .container .navbar .container-fluid .navbar-brand {
   position: absolute;
   content: '';
   background-color: var(--yellow);
-  width: 40px;
+  width: 80px;
   height: 4px;
   top: -10px;
   border-radius: 3px;
+}
+
+#skills h1::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: moveDot 4s ease-in-out infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateX(-40px);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-40px);
+  }
 }
 
 #skills .container .ele .content img {
@@ -528,15 +643,42 @@ header .container .navbar .container-fluid .navbar-brand {
   position: absolute;
   content: '';
   background-color: var(--yellow);
-  width: 40px;
+  width: 80px;
   height: 4px;
   top: -10px;
   border-radius: 3px;
 }
 
+#projects h1::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: moveDot 4s ease-in-out infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateX(-40px);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-40px);
+  }
+}
+
 #projects>p {
   margin-bottom: 50px;
 }
+
 #projects .container .swiper-wrapper .swiper-slide {
   margin-top: 40px;
 }
@@ -614,6 +756,7 @@ header .container .navbar .container-fluid .navbar-brand {
   color: var(--yellow);
   border: 1px var(--yellow) solid;
 }
+
 .swiper {
   padding: 35px 0 !important;
   padding-bottom: 0 !important;
@@ -737,19 +880,48 @@ header .container .navbar .container-fluid .navbar-brand {
   position: absolute;
   content: '';
   background-color: var(--yellow);
-  width: 40px;
+  width: 80px;
   height: 4px;
   top: -10px;
   border-radius: 3px;
 }
+
+#contact h1::before {
+  content: "";
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--yellow);
+  animation: moveDot 4s ease-in-out infinite;
+}
+
+@keyframes moveDot {
+  0% {
+    transform: translateX(-40px);
+  }
+
+  50% {
+    transform: translateX(30px);
+  }
+
+  100% {
+    transform: translateX(-40px);
+  }
+}
+
 #contact .ele {
   margin-top: 50px;
 }
-#contact .ele .content{
+
+#contact .ele .content {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #contact .ele #contactForm {
   display: flex;
   flex-direction: column;
@@ -804,7 +976,7 @@ header .container .navbar .container-fluid .navbar-brand {
   border: 1px var(--yellow) solid;
 }
 
- footer{
+footer {
   background-image: url(../images/backgrund.webp);
   background-position: center;
   background-repeat: no-repeat;
@@ -816,8 +988,9 @@ header .container .navbar .container-fluid .navbar-brand {
   align-items: center;
   justify-content: center;
   position: relative;
- }
- footer a{
+}
+
+footer a {
   text-decoration: none;
   font-family: var(--main-font);
   color: var(--yellow);
@@ -831,15 +1004,20 @@ header .container .navbar .container-fluid .navbar-brand {
   transition: all 0.5s ease;
   position: relative;
   z-index: 2;
- }
-  footer a:hover{
-      color: white;
+}
 
-  }
-  footer .overlay{
-    position: absolute;
+footer p {
+  margin: 0 10px;
+}
+
+footer a:hover {
+  color: white;
+}
+
+footer .overlay {
+  position: absolute;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
-  }
+}
