@@ -1021,3 +1021,69 @@ footer .overlay {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
+
+/* Scroll-based animations for boxes only (.ele and .swiper-slide) */
+/* Boxes start hidden and animate in when scrolled into view */
+.ele, .swiper-slide {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animate class applied by JS when box enters viewport */
+.ele.animate, .swiper-slide.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive adjustments - reduce movement on mobile for better performance */
+@media (max-width: 768px) {
+  .ele, .swiper-slide {
+    transform: translateY(20px);
+  }
+}
+
+/* Note: Animations are triggered by scroll (Intersection Observer in animations.js)
+   Navbar clicks use smooth scroll, bringing sections into view and triggering box animations
+   To disable: remove 'animate' class additions in animations.js or comment out this CSS block */
+
+/* Hero Section Page-Load Animations */
+/* Default state: visible, with transition ready */
+.hero-section .col-lg-6:first-child > div,
+.hero-section .col-lg-6:first-child h1,
+.hero-section .col-lg-6:first-child > p,
+.hero-section .col-lg-6:first-child > a,
+.hero-section .col-lg-6:first-child .my-links,
+.hero-section .col-lg-6:last-child img:last-child,
+.hero-section .col-lg-6:last-child img:first-child {
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Hidden state: applied by JS initially */
+.hero-hidden {
+  opacity: 0 !important;
+  transform: translateY(30px) !important;
+}
+
+.hero-hidden.hero-section .col-lg-6:last-child img:last-child,
+.hero-hidden.hero-section .col-lg-6:last-child img:first-child {
+  transform: scale(0.9) !important;
+}
+
+/* Animated state: fade-in and slide-up/scale-in */
+.hero-animate {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Responsive: reduce slide distance on mobile for better performance */
+@media (max-width: 768px) {
+  .hero-hidden {
+    transform: translateY(20px) !important;
+  }
+
+  .hero-hidden.hero-section .col-lg-6:last-child img:last-child,
+  .hero-hidden.hero-section .col-lg-6:last-child img:first-child {
+    transform: scale(0.95) !important;
+  }
+}
