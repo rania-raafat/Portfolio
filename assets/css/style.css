@@ -33,45 +33,84 @@ p {
   background-image: url(../images/navbar-toggle-icon.png) !important;
 }
 
-.navbar-toggler {
-  border: #DAC5A7 solid 2px;
-  border-radius: 10px;
-}
-
 .sidebar {
   height: 100%;
   width: 0;
   position: fixed;
   top: 0;
   right: 0;
-  background-color: #111;
   overflow-x: hidden;
-  transition: 0.4s;
-  padding-top: 60px;
   z-index: 9999;
+
+  background: rgba(18, 18, 18, 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  transition: width 0.35s ease;
+  padding-top: 80px;
+
+  border-left: 1px solid rgba(218, 197, 167, 0.15);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.4);
 }
 
 .sidebar .nav-link {
   color: var(--yellow);
-  padding: 10px 20px;
+  padding: 16px 28px;
   display: block;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
+  letter-spacing: 0.5px;
+
+  border-left: 3px solid transparent;
+
+  transition: all 0.3s ease;
 }
 
 .sidebar .nav-link:hover {
-  background: #444;
+  background: rgba(218, 197, 167, 0.08);
+  border-left-color: var(--yellow);
 }
 
 .sidebar .close-btn {
   position: absolute;
-  top: 15px;
-  right: 25px;
-  font-size: 36px;
-  background: none;
+  top: 18px;
+  right: 22px;
+
+  width: 42px;
+  height: 42px;
+
   border: none;
+  border-radius: 50%;
+
+  background: rgba(218, 197, 167, 0.12);
   color: var(--yellow);
+
+  font-size: 22px;
   cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.sidebar .close-btn:hover {
+  background: var(--yellow);
+  color: #000;
+  transform: rotate(90deg);
+}
+.navbar-toggler {
+  border: #DAC5A7 solid 2px;
+  border-radius: 10px;
+}
+.navbar-toggler {
+  border: 1px solid rgba(218, 197, 167, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  background: rgba(218, 197, 167, 0.12);
 }
 
 header {
@@ -348,7 +387,7 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #about h1 {
   font-weight: 800;
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   position: relative;
   display: flex;
   width: fit-content;
@@ -449,7 +488,7 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #certificates h1 {
   font-weight: 800;
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   position: relative;
   display: flex;
   width: fit-content;
@@ -563,7 +602,7 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #skills h1 {
   font-weight: 800;
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   position: relative;
   display: flex;
   width: fit-content;
@@ -632,7 +671,7 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #projects h1 {
   font-weight: 800;
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   position: relative;
   display: flex;
   width: fit-content;
@@ -675,12 +714,8 @@ header .container .navbar .container-fluid .navbar-brand {
   }
 }
 
-#projects>p {
-  margin-bottom: 50px;
-}
-
 #projects .container .swiper-wrapper .swiper-slide {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 #projects .container .swiper-wrapper .swiper-slide h3 {
@@ -869,7 +904,7 @@ header .container .navbar .container-fluid .navbar-brand {
 
 #contact h1 {
   font-weight: 800;
-  padding: 0 0 50px 0;
+  padding: 0 0 10px 0;
   position: relative;
   display: flex;
   width: fit-content;
@@ -1047,4 +1082,39 @@ footer .overlay {
    Navbar clicks use smooth scroll, bringing sections into view and triggering box animations
    To disable: remove 'animate' class additions in animations.js or comment out this CSS block */
 
+.linkedin-btn-fixed {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 18px;
+
+    background: #0077B5;
+    color: white;
+    text-decoration: none;
+
+    border-radius: 50px;
+    font-family: var(--main-font);
+    font-weight: 600;
+    font-size: 14px;
+
+    max-width: 320px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    transition: all .3s ease;
+}
+
+.linkedin-btn-fixed:hover {
+    transform: translateY(-3px);
+}
+
+.linkedin-btn-fixed i {
+    font-size: 18px;
+    flex-shrink: 0;
+}
 

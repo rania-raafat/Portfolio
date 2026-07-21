@@ -21,3 +21,19 @@
     flex-direction: column;
     }
 }
+
+@media (max-width: 768px) {
+    .linkedin-btn-fixed {
+        bottom: 15px;
+        right: 15px;
+
+        padding: 10px 14px;
+        font-size: 12px;
+
+        max-width: 220px;
+    }
+
+    .linkedin-btn-fixed i {
+        font-size: 16px;
+    }
+}
