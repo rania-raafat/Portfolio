@@ -85,7 +85,6 @@ p {
   background: rgba(218, 197, 167, 0.12);
   color: var(--yellow);
 
-  font-size: 20px;
   cursor: pointer;
 
   transition: all 0.3s ease;
@@ -427,18 +426,7 @@ header .container .navbar .container-fluid .navbar-brand {
   }
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-  .hero-avatar {
-    max-width: 450px;
-  }
-}
-
 @media (max-width: 768px) {
-  .hero-avatar {
-    max-width: 350px;
-  }
-
   .orbit-1::before {
     width: 14px;
     height: 14px;
@@ -447,12 +435,6 @@ header .container .navbar .container-fluid .navbar-brand {
   .orbit-2::before {
     width: 10px;
     height: 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-avatar {
-    max-width: 280px;
   }
 }
 
