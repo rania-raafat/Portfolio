@@ -9,16 +9,18 @@
         width: 100%;
     }
 }
-@media(max-width:400px){
-    footer{
+
+@media(max-width:400px) {
+    footer {
         flex-direction: column;
         gap: 20px;
     }
 }
-@media (max-width:300px){
+
+@media (max-width:300px) {
     .slider {
-    gap: 20px;
-    flex-direction: column;
+        gap: 20px;
+        flex-direction: column;
     }
 }
 
@@ -35,5 +37,63 @@
 
     .linkedin-btn-fixed i {
         font-size: 16px;
+    }
+
+    .loader-container {
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    .loader-name {
+        font-size: 2rem;
+        letter-spacing: 4px;
+        margin-bottom: 25px;
+    }
+
+    .terminal {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .line,
+    .launch {
+        font-size: 0.9rem;
+    }
+
+    .orbit-1::before {
+        width: 14px;
+        height: 14px;
+    }
+
+    .orbit-2::before {
+        width: 10px;
+        height: 10px;
+    }
+
+    .ele,
+    .swiper-slide {
+        transform: translateY(20px);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .loader-container {
+        padding: 0 20px;
+    }
+
+    .loader-name {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+    }
+
+    .terminal {
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .line,
+    .launch {
+        font-size: 0.8rem;
     }
 }

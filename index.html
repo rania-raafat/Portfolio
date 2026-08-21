@@ -3,6 +3,11 @@
 
 <head>
   <meta charset="UTF-8" />
+  <script>
+    if (localStorage.getItem("portfolio-theme") === "light") {
+      document.documentElement.classList.add("light-theme");
+    }
+  </script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/icon" href="./assets/images/icon.jpg" />
@@ -23,6 +28,33 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbarSupportedContent" data-bs-offset="50" tabindex="0">
+  <div id="loader">
+    <div class="loader-container">
+
+      <h1 class="loader-name">RANIA RAAFAT</h1>
+
+      <div class="terminal">
+        <div class="terminal-header">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <p class="line line-1">> Initializing Portfolio...</p>
+        <p class="line line-2">✓ Assets Loaded</p>
+
+        <p class="line line-3">> Loading Projects...</p>
+        <p class="line line-4">✓ Projects Loaded</p>
+
+        <p class="line line-5">> Connecting Experience...</p>
+        <p class="line line-6">✓ Ready</p>
+
+        <p class="launch">
+          Launching Portfolio<span>.</span><span>.</span><span>.</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
   <!-- start header -->
   <header class="head">
     <div class="container">
@@ -405,20 +437,23 @@
   </footer>
   <!-- end footer -->
 
+  <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+    <i class="fas fa-sun"></i>
+  </button>
   <a href="https://www.linkedin.com/in/rania-raafat/" target="_blank" class="linkedin-btn-fixed">
     My portfolio may get outdated — Visit LinkedIn
     <i class="fab fa-linkedin"></i>
   </a>
 
   <script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11.1.1/swiper-bundle.min.js"></script>
 
-<script src="./assets/js/basic.js" defer></script>
-<script src="./assets/js/animations.js" defer></script>
-<script src="./assets/js/web-threads.js" defer></script>
+  <script src="./assets/js/basic.js" defer></script>
+  <script src="./assets/js/animations.js" defer></script>
+  <script src="./assets/js/web-threads.js" defer></script>
 </body>
 
 </html>

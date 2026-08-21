@@ -1,3 +1,13 @@
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+window.scrollTo(0, 0);
+
+window.addEventListener("load", () => {
+  window.scrollTo(0, 0);
+});
+
 const sidebar = document.getElementById("sidebar");
 const openBtn = document.getElementById("openSidebar");
 const closeBtn = document.getElementById("closeSidebar");
@@ -171,3 +181,62 @@ document
       status.innerText = "❌ Failed to send. Please try again later.";
     }
   });
+
+let animationFinished = false;
+let websiteLoaded = false;
+
+function hideLoader() {
+  if (animationFinished && websiteLoaded) {
+    document.getElementById("loader").classList.add("hide");
+
+    setTimeout(() => {
+      document.querySelector("header").classList.add("show-navbar");
+    }, 300);
+  }
+}
+
+window.addEventListener("load", () => {
+  websiteLoaded = true;
+  hideLoader();
+});
+
+setTimeout(() => {
+  animationFinished = true;
+  hideLoader();
+}, 6000);
+/* ===========================
+   DARK / LIGHT MODE
+=========================== */
+
+const themeToggle = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("portfolio-theme");
+
+if (savedTheme === "light") {
+  document.documentElement.classList.add("light-theme");
+}
+
+function updateThemeIcon() {
+  const isLight = document.documentElement.classList.contains("light-theme");
+
+  themeToggle.innerHTML = isLight
+    ? '<i class="fas fa-moon"></i>'
+    : '<i class="fas fa-sun"></i>';
+
+  themeToggle.setAttribute(
+    "aria-label",
+    isLight ? "Switch to dark mode" : "Switch to light mode",
+  );
+}
+
+themeToggle.addEventListener("click", () => {
+  document.documentElement.classList.toggle("light-theme");
+
+  const isLight = document.documentElement.classList.contains("light-theme");
+
+  localStorage.setItem("portfolio-theme", isLight ? "light" : "dark");
+
+  updateThemeIcon();
+});
+
+updateThemeIcon();
